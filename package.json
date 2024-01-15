@@ -1,0 +1,19 @@
+{
+  "name": "cypress_demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "cypress": "cypress open",
+    "test-on-electron": "cypress run --browser electron",
+    "test-on-chrome": "cypress run --browser chrome",
+    "test-on-firefox": "cypress run --browser firefox",
+    "test-on-all-browsers": "npm run test-electron && npm run test-chrome && npm run test-firefox",
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "cypress": "^13.6.2"
+  }
+}
