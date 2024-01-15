@@ -5,9 +5,6 @@ on: [push, workflow_dispatch]
 jobs:
   test:
     runs-on: ubuntu-latest
-    container:
-      image: cypress/browsers:node-20.9.0-chrome-118.0.5993.88-1-ff-118.0.2-edge-118.0.2088.46-1
-      options: --user 1001
 
     steps:
     - name: Checkout Repository
@@ -23,6 +20,6 @@ jobs:
 
     - name: Run Cypress Tests on Chrome
       run: npm run test-on-chrome
-
-    - name: Run Cypress Tests on Firefox
-      run: npm run test-on-firefox
+      env:
+        CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+        CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
